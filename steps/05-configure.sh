@@ -13,7 +13,7 @@ mkdir -p "$BUILD"
 
 (
   echo "is_debug = $IS_DEBUG"
-  #echo "pdf_is_standalone = true"
+  echo "pdf_is_standalone = true"
   echo "pdf_use_partition_alloc = false"
   echo "target_cpu = \"$TARGET_CPU\""
   echo "target_os = \"$OS\""
@@ -35,6 +35,7 @@ mkdir -p "$BUILD"
     android)
       echo "clang_use_chrome_plugins = false"
       echo "default_min_sdk_version = 23"
+      echo "use_mold = false"
       ;;
     ios)
       [ -n "$TARGET_ENVIRONMENT" ] && echo "target_environment = \"$TARGET_ENVIRONMENT\""
